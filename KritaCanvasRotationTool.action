@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ActionCollection version="2" name="Scripts">
     <Actions category="Scripts">
-        <text>Rotate Canvas Tool</text>
+        <text>Krita Canvas Rotation Tool</text>
         <Action name="canvasRotateCW">
             <icon></icon>
             <text>Rotate Canvas Clockwise</text>
