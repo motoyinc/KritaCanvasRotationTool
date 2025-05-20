@@ -2,13 +2,20 @@
 
 <p align="center">
   精细控制画布旋转的 Krita Python 插件<br>
+  ショートカットでキャンバス回転を精密にコントロールできる Krita 用 Python プラグイン<br>
   A Krita plugin for smooth and precise canvas rotation via shortcuts.
 </p>
 
-## ✨ 插件功能 | Features
-该插件默认绑定以下快捷键：  
-  - `Ctrl + 4` → 画布逆时针旋转  
-  - `Ctrl + 6` → 画布顺时针旋转
+
+  <p align="center">
+    <a href="/docs/README_CN.md">中文</a>
+    ·
+    <a href="README.md">Englins</a>
+    ·
+    <a href="/docs/README_JP.md">日本語</a>
+  </p>
+
+## ✨ Features
 
 > By default, this plugin uses the following shortcuts:  
 > - `Ctrl + 4` → Rotate canvas counterclockwise  
@@ -19,24 +26,16 @@
 
 
 
-## 📦 安装方式 | Installation
+## 📦 Installation
 
 
-### ✅ Step 1：下载插件 | Download the Plugin
-
-- 前往本仓库的 https://github.com/motoyinc/RotateCanvasTool/releases 页面，下载最新版本的 `rotatecanvastool.zip` 文件。<br>
-- ⚠️ 请**不要解压**，保持为 `.zip` 文件。
+### ✅ Step 1：Download the Plugin
 
 > Go to the https://github.com/motoyinc/RotateCanvasTool/releases section of this repository and download the latest `rotatecanvastool.zip` file.  
 > ⚠️ **Do not unzip it** — keep the file as `.zip`.
 
 
-### ✅ Step 2：导入插件 | Install in Krita
-
-- 打开 Krita  
-- 菜单栏选择：`工具 > 脚本 > 从文件打开 Python 插件`  
-- 在弹出窗口中选择刚刚下载的 `rotatecanvastool.zip` 文件  
-- 导入完成后，重启 Krita 以生效
+### ✅ Step 2：Install in Krita
 
 > Open Krita  
 > Go to: `Tools > Scripts > Import Python Plugin from File`  
@@ -44,11 +43,7 @@
 > After import, **restart Krita** to apply the plugin
 
 
-### ✅ Step 3：启用插件 | Enable the Plugin
-
-- 打开菜单：`设置 > 配置 Krita > Python 插件管理器`
-- 找到插件 `Rotate Canvas Tool`
-- 勾选启用 ✅，点击“确定”并再次重启 Krita
+### ✅ Step 3：Enable the Plugin
 
 > Go to: `Settings > Configure Krita > Python Plugin Manager`  
 > Locate `Rotate Canvas Tool`, check the box to enable ✅  
