@@ -31,7 +31,8 @@
 
 ### ✅ Step 1：Download the Plugin
 
-> Go to the https://github.com/motoyinc/RotateCanvasTool/releases section of this repository and download the latest `rotatecanvastool.zip` file.  
+> Go to the [releases](https://github.com/motoyinc/KritaCanvasRotationTool/releases) section of this repository and download the latest `KritaCanvasRotationTool.zip
+` file.  
 > ⚠️ **Do not unzip it** — keep the file as `.zip`.
 
 
@@ -39,7 +40,8 @@
 
 > Open Krita  
 > Go to: `Tools > Scripts > Import Python Plugin from File`  
-> Select the downloaded `rotatecanvastool.zip` file  
+> Select the downloaded `KritaCanvasRotationTool.zip
+` file  
 > After import, **restart Krita** to apply the plugin
 
 
