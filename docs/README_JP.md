@@ -9,7 +9,7 @@
 <p align="center">
   <a href="/docs/README_CN.md">中文</a>
   ·
-  <a href="README.md">English</a>
+  <a href="https://github.com/motoyinc/KritaCanvasRotationTool/blob/master/README.md">English</a>
   ·
   <a href="/docs/README_JP.md">日本語</a>
 </p>
