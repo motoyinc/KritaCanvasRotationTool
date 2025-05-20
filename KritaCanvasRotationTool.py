@@ -1,6 +1,8 @@
 from krita import Krita, Extension
 from PyQt5.QtWidgets import QInputDialog
 from PyQt5.QtWidgets import QMenu
+import configparser
+import os
 
 class RotateCanvasTool(Extension):
     def __init__(self, parent):
@@ -31,12 +33,44 @@ class RotateCanvasTool(Extension):
         action_ccw.triggered.connect(self.rotate_canvas_counterclockwise)
         menu.addAction(action_ccw)
 
+    def update_config_value(self):
+        config_path = os.path.join(os.path.dirname(__file__), 'KritaCanvasRotationToolSettings.ini')
+        config = configparser.ConfigParser()
+
+        if not os.path.exists(config_path):
+            config['CanvasRotation'] = {'step': str(self.step)}
+        else:
+            config.read(config_path)
+            if 'CanvasRotation' not in config:
+                config['CanvasRotation'] = {}
+
+        config['CanvasRotation']['step'] = str(self.step)
+        with open(config_path, 'w') as configfile:
+            config.write(configfile)
+
+    def read_config_value(self):
+        config_path = os.path.join(os.path.dirname(__file__), 'KritaCanvasRotationToolSettings.ini')
+        config = configparser.ConfigParser()
+        config.read(config_path)
+
+        if 'CanvasRotation' in config and 'step' in config['CanvasRotation']:
+            try:
+                # 将读取的字符串转换为浮点数
+                step_value = float(config['CanvasRotation']['step'])
+                return step_value
+            except ValueError:
+                # 如果转换失败，返回默认值
+                return 1.0
+        else:
+            return 1.0
 
     def set_rotation_step(self):
         """设置旋转步进"""
-        step, ok = QInputDialog.getDouble(None, "Set Rotation Step", "Enter rotation step (degrees):", self.step, 0.1, 45.0, 0.25)
+        self.step = self.read_config_value()
+        step, ok = QInputDialog.getDouble(None, "Set Rotation Step", "Enter rotation step (degrees):", self.step, 0.1, 45.0, 2)
         if ok:
             self.step = step
+            self.update_config_value()
 
     def rotate_canvas_clockwise(self):
         """将当前画布顺时针旋转1度"""
