@@ -27,18 +27,18 @@
 
 ### ✅ 手順 1：プラグインのダウンロード
 
-> リポジトリの [Releases](https://github.com/motoyinc/RotateCanvasTool/releases) ページから `rotatecanvastool.zip` をダウンロードしてください。  
+> リポジトリの [Releases](https://github.com/motoyinc/RotateCanvasTool/releases) ページから `KritaCanvasRotationTool.zip` をダウンロードしてください。  
 > ⚠️ **解凍しないでください**。zip ファイルのまま保持します。
 
 ### ✅ 手順 2：Krita に読み込む
 
 > Krita を起動します  
 > `ツール > スクリプト > Python プラグインをファイルから読み込む` を選択します  
-> ダウンロードした `rotatecanvastool.zip` を選択します  
+> ダウンロードした `KritaCanvasRotationTool.zip` を選択します  
 > 終了後、**Krita を再起動**します
 
 ### ✅ 手順 3：プラグインを有効化
 
 > `設定 > Krita を設定 > Python プラグインマネージャー` を開きます  
-> `Rotate Canvas Tool` を探して、チェックを入れ ✅  
+> `Krita Canvas Rotation Tool` を探して、チェックを入れ ✅  
 > OK を押して、**Krita をもう一度再起動**してください
