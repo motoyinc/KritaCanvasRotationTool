@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionCollection version="2" name="Scripts">
+    <Actions category="Scripts">
+        <text>Rotate Canvas Tool</text>
+        <Action name="canvasRotateCW">
+            <icon></icon>
+            <text>Rotate Canvas Clockwise</text>
+            <whatsThis></whatsThis>
+            <toolTip></toolTip>
+            <iconText></iconText>
+            <activationFlags>10000</activationFlags>
+            <activationConditions>0</activationConditions>
+            <shortcut>Ctrl+6</shortcut>
+            <isCheckable>false</isCheckable>
+            <statusTip></statusTip>
+        </Action>
+        <Action name="canvasRotateCCW">
+            <icon></icon>
+            <text>Rotate Canvas CounterClockwise</text>
+            <whatsThis></whatsThis>
+            <toolTip></toolTip>
+            <iconText></iconText>
+            <activationFlags>10000</activationFlags>
+            <activationConditions>0</activationConditions>
+            <shortcut>Ctrl+4</shortcut>
+            <isCheckable>false</isCheckable>
+            <statusTip></statusTip>
+        </Action>
+    </Actions>
+</ActionCollection>

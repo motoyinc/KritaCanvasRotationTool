@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=rotatecanvastool
+X-Python-2-Compatible=false
+X-KDE-PluginInfo-Author=motoyinc(猫头鹰也是猫)
+X-KDE-PluginInfo-Email=motoyinc@motoyinc.com
+X-KDE-PluginInfo-EnabledByDefault=true
+Name=Rotate Canvas Tool
+Comment=This tool allows users to rotate the canvas smoothly via customizable shortcuts.
