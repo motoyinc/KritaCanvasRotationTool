@@ -1,1 +1,1 @@
-from .rotatecanvastool import *
+from .KritaCanvasRotationTool import *
