@@ -21,8 +21,7 @@ class SerializationToolConfig:
         else:
             self.step = 1.0
 
-    def save_config_to_disk(self, step):
-        self.step = step
+    def save_config_to_disk(self):
         if not os.path.exists(self.__config_path):
             self.__config['CanvasRotation'] = {'step': str(self.step)}
         else:
