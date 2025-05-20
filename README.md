@@ -43,6 +43,8 @@
 > Select the downloaded `KritaCanvasRotationTool.zip` file  
 > After import, **restart Krita** to apply the plugin
 
+<img src="https://github.com/user-attachments/assets/796bb903-c394-48d6-8543-9fb4ca4ba5a9" width="600px" />
+
 
 ### ✅ Step 3：Enable the Plugin
 
@@ -50,5 +52,6 @@
 > Locate `Krita Canvas Rotation Tool`, check the box to enable ✅  
 > Click OK and **restart Krita** again
 
+<img src="https://github.com/user-attachments/assets/27aeec63-e282-4221-9adf-be1a713018c7" width="600px" />
 
-
+<img src="https://github.com/user-attachments/assets/d5b32137-d6c4-45a1-98de-b9fd1b05ac70" width="600px" />

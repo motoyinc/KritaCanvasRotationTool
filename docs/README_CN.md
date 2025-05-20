@@ -40,8 +40,15 @@
  文件  
 > 导入完成后，**重启 Krita**
 
+<img src="https://github.com/user-attachments/assets/b8d6a779-7d50-45aa-bcc0-95b43f26728c" width="600px" />
+
+
+
 ### ✅ 第三步：启用插件
 
 > 打开：`设置 > 配置 Krita > Python 插件管理器`  
 > 找到 `Krita Canvas Rotation Tool` 插件，勾选启用 ✅  
 > 点击“确定”，并**再次重启 Krita**
+
+<img src="https://github.com/user-attachments/assets/2fe2a259-b485-47db-a299-3406c381a93e" width="600px" />
+<img src="https://github.com/user-attachments/assets/2ff3cb23-626d-4bac-91e5-c31f7abba7be" width="600px" />
