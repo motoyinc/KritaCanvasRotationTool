@@ -24,10 +24,10 @@
 
 ### ✅ Step 1：下载插件 | Download the Plugin
 
-- 前往本仓库的 <a href="./releases">[Releases / Packages]</a> 页面，下载最新版本的 `rotatecanvastool.zip` 文件。<br>
+- 前往本仓库的 https://github.com/motoyinc/RotateCanvasTool/releases 页面，下载最新版本的 `rotatecanvastool.zip` 文件。<br>
 - ⚠️ 请**不要解压**，保持为 `.zip` 文件。
 
-> Go to the <a href="./releases">[Releases / Packages]</a> section of this repository and download the latest `rotatecanvastool.zip` file.  
+> Go to the https://github.com/motoyinc/RotateCanvasTool/releases section of this repository and download the latest `rotatecanvastool.zip` file.  
 > ⚠️ **Do not unzip it** — keep the file as `.zip`.
 
 
