@@ -1,7 +1,7 @@
 from .SerializationToolConfig import SerializationToolConfig
 from krita import Krita, Extension
-from PyQt5.QtWidgets import QInputDialog
-from PyQt5.QtWidgets import QMenu
+from PyQt5.QtWidgets import QInputDialog, QMenu
+from PyQt5.QtGui import QIcon
 
 class RotateCanvasTool(Extension):
     def __init__(self, parent):
@@ -61,6 +61,7 @@ class RotateCanvasTool(Extension):
     def config_step_reset(self):
         self.config.step = 1.0
         self.config.save_config_to_disk()
+        self.display_config_step()
 
     def adjust_step(self, increase=True):
         """调整旋转步进值"""
@@ -85,7 +86,12 @@ class RotateCanvasTool(Extension):
         step = max(0.01, min(step, 45.0))
         self.config.step = step
         self.config.save_config_to_disk()
+        self.display_config_step()
 
+    def display_config_step(self):
+        view = Krita.instance().activeWindow().activeView()
+        if view:
+            view.showFloatingMessage(f"Step: {self.config.step:.2f}°",QIcon(),2000,0)
 
     def rotate_canvas_clockwise(self):
         """将当前画布顺时针旋转1度"""
