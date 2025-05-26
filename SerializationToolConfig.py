@@ -8,6 +8,8 @@ class SerializationToolConfig:
 
         ## 配置bi
         self.step = 1.0
+        self.rotate_anim = False
+        # self.smooth = 0.5
 
     def read_config_value(self):
         self.__config.read(self.__config_path)

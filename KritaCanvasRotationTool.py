@@ -2,12 +2,21 @@ from .SerializationToolConfig import SerializationToolConfig
 from krita import Krita, Extension
 from PyQt5.QtWidgets import QInputDialog, QMenu
 from PyQt5.QtGui import QIcon
+from PyQt5.QtCore import QTimer
 
 class RotateCanvasTool(Extension):
     def __init__(self, parent):
         super().__init__(parent)
         self.config = SerializationToolConfig()
         self.config.read_config_value()
+        self.timer_ccw = QTimer()
+        self.timer_ccw.setInterval(1)
+        self.timer_cw = QTimer()
+        self.timer_cw.setInterval(1)
+        self.smooth = 0.1
+        self.angle_total = 0
+        self.timer_cw.timeout.connect(lambda: self.__rotate(self.timer_cw, self.DIR_CW))
+        self.timer_ccw.timeout.connect(lambda: self.__rotate(self.timer_ccw, self.DIR_CCW))
 
     def setup(self):
         pass
@@ -93,13 +102,33 @@ class RotateCanvasTool(Extension):
         if view:
             view.showFloatingMessage(f"Step: {self.config.step:.2f}°",QIcon(),2000,0)
 
+    DIR_CW = True
+    DIR_CCW = False
     def rotate_canvas_clockwise(self):
-        """将当前画布顺时针旋转1度"""
-        self.rotate_canvas(self.config.step)
+        if not self.config.rotate_anim:
+            if self.timer_cw.isActive(): self.timer_cw.stop()
+            self.rotate_canvas(self.config.step)
+            return
+        self.timer_cw.start()
 
     def rotate_canvas_counterclockwise(self):
-        """将当前画布逆时针旋转1度"""
-        self.rotate_canvas(-self.config.step)
+        if not self.config.rotate_anim:
+            if self.timer_cw.isActive(): self.timer_cw.stop()
+            self.rotate_canvas(-self.config.step)
+            return
+        self.timer_ccw.start()
+
+    def __rotate(self, timer, dir=DIR_CW):
+        if dir == self.DIR_CW :
+            self.rotate_canvas(self.smooth)
+        else:
+            self.rotate_canvas(-self.smooth)
+        self.angle_total += self.smooth
+        if timer.isActive():
+            if self.angle_total >= self.config.step:
+                timer.stop()
+                self.angle_total = 0
+
 
     def rotate_canvas(self, angle_delta):
         app = Krita.instance()
