@@ -2,9 +2,9 @@
 <ActionCollection version="2" name="Scripts">
     <Actions category="Scripts">
         <text>Krita Canvas Rotation Tool</text>
-        <Action name="canvasRotateCW">
+        <Action name="MicroRotationADD">
             <icon></icon>
-            <text>Rotate Canvas Clockwise</text>
+            <text>Micro Rotate Canvas +</text>
             <whatsThis></whatsThis>
             <toolTip></toolTip>
             <iconText></iconText>
@@ -14,9 +14,9 @@
             <isCheckable>false</isCheckable>
             <statusTip></statusTip>
         </Action>
-        <Action name="canvasRotateCCW">
+        <Action name="MicroRotationSUB">
             <icon></icon>
-            <text>Rotate Canvas CounterClockwise</text>
+            <text>Micro Rotate Canvas -</text>
             <whatsThis></whatsThis>
             <toolTip></toolTip>
             <iconText></iconText>
@@ -26,9 +26,9 @@
             <isCheckable>false</isCheckable>
             <statusTip></statusTip>
         </Action>
-        <Action name="ConfigStepADD">
+        <Action name="CoarseRotationADD">
             <icon></icon>
-            <text>Config Step +</text>
+            <text>Coarse Rotation +</text>
             <whatsThis></whatsThis>
             <toolTip></toolTip>
             <iconText></iconText>
@@ -38,27 +38,15 @@
             <isCheckable>false</isCheckable>
             <statusTip></statusTip>
         </Action>
-        <Action name="ConfigStepSUB">
+        <Action name="CoarseRotationSUB">
             <icon></icon>
-            <text>Config Step -</text>
+            <text>Coarse Rotation -</text>
             <whatsThis></whatsThis>
             <toolTip></toolTip>
             <iconText></iconText>
             <activationFlags>10000</activationFlags>
             <activationConditions>0</activationConditions>
             <shortcut>Alt+4</shortcut>
-            <isCheckable>false</isCheckable>
-            <statusTip></statusTip>
-        </Action>
-        <Action name="ConfigStepReset">
-            <icon></icon>
-            <text>Config Step Reset</text>
-            <whatsThis></whatsThis>
-            <toolTip></toolTip>
-            <iconText></iconText>
-            <activationFlags>10000</activationFlags>
-            <activationConditions>0</activationConditions>
-            <shortcut>Alt+5</shortcut>
             <isCheckable>false</isCheckable>
             <statusTip></statusTip>
         </Action>
