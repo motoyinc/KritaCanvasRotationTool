@@ -33,7 +33,7 @@
 </p>
 
 * 🌀 **对齐吸附的大幅旋转**
-  快速对齐到固定角度（例如 15°、30°、45° 等），支持平滑过渡动画。
+  快速对齐到固定角度（例如 15°、30°、45° 等）。
 
 <p align="center">
 <img src="https://github.com/user-attachments/assets/7a4435da-0ec6-40e2-b3ad-f55cdefc60d6" width="400px" />
