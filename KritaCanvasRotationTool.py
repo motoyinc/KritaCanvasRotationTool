@@ -9,13 +9,7 @@ class RotateCanvasTool(Extension):
         super().__init__(parent)
         self.config = SerializationToolConfig()
         self.config.read_config_value()
-        self.timer_ccw = QTimer()
-        self.timer_ccw.setInterval(1)
-        self.timer_cw = QTimer()
-        self.timer_cw.setInterval(1)
         self.angle_total = 0
-        self.timer_cw.timeout.connect(lambda: self.__rotate(self.timer_cw, self.DIR_CW))
-        self.timer_ccw.timeout.connect(lambda: self.__rotate(self.timer_ccw, self.DIR_CCW))
 
     def setup(self):
         pass
@@ -27,7 +21,7 @@ class RotateCanvasTool(Extension):
         action.setMenu(menu)
 
         # 设置旋转属性
-        action_set = window.createAction("setRotationSetting", "rotation setting", "")
+        action_set = window.createAction("setRotationSetting", "Rotation Setting", "")
         action_set.triggered.connect(self.set_rotation_setting)
         menu.addAction(action_set)
 
@@ -54,9 +48,9 @@ class RotateCanvasTool(Extension):
     def set_rotation_setting(self):
         dialog = RotationSettingDialog(self.config)
         if dialog.exec_() == QDialog.Accepted:
-            step, rotate_anim = dialog.get_values()
+            step, coarse_step = dialog.get_values()
             self.config.step = step
-            self.config.rotate_anim = rotate_anim
+            self.config.coarse_step = coarse_step
             self.config.save_config_to_disk()
 
     # 微旋转
@@ -67,38 +61,32 @@ class RotateCanvasTool(Extension):
         self.rotate_canvas(-self.config.step)
 
     # 粗旋转
-    DIR_CW = True
-    DIR_CCW = False
-    def coarse_rotation_sub(self):
-        step = self.config.get_coarse_step()
-        if not self.config.rotate_anim:
-            if self.timer_cw.isActive(): self.timer_cw.stop()
-            self.rotate_canvas(-step)
-            return
-        self.timer_ccw.start()
-
     def coarse_rotation_add(self):
-        step = self.config.get_coarse_step()
-        if not self.config.rotate_anim:
-            if self.timer_cw.isActive(): self.timer_cw.stop()
-            self.rotate_canvas(step)
-            return
-        self.timer_cw.start()
+        step = self.computer_coarse_step()
+        self.rotate_canvas(step)
 
-    def __rotate(self, timer, dir=DIR_CW):
-        smoothMOD = self.config.get_smoothMOD_step()
-        if timer.isActive():
-            if self.angle_total >= self.config.get_smooth_step():
-                timer.stop()
-                self.angle_total = 0
-        if smoothMOD != 0 :
-            self.rotate_canvas(smoothMOD)
-        if dir == self.DIR_CW :
-            self.rotate_canvas(self.config.smooth)
-        else:
-            self.rotate_canvas(-self.config.smooth)
-        self.angle_total += self.config.smooth
+    def coarse_rotation_sub(self):
+        step = self.computer_coarse_step()
+        self.rotate_canvas(-step)
 
+    def computer_coarse_step(self)->float:
+        app = Krita.instance()
+        win = app.activeWindow()
+        current_angle:float = 0
+        if win is None:
+            return 0
+        view = win.activeView()
+        if view is None:
+            return 0
+        canvas = view.canvas()
+        current_angle = abs(canvas.rotation())
+        step_mod:float = current_angle%self.config.coarse_step
+        step:float = 0
+        if step_mod > 0.0:
+            step = self.config.coarse_step - step_mod
+        if step_mod == 0.0:
+            step = self.config.coarse_step
+        return step
 
 
     def rotate_canvas(self, angle_delta:float):
